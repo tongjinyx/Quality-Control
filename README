@@ -1,1 +1,41 @@
-Spring boot --- MySQL
+项目开发采用Spring Boot框架，接口规范采用Restful框架
+具体接口细节在ip:12345//swagger-ui/index.html上
+|——src
+|   |——main
+|        |——java
+|        |    |——com.example.QualityControlDemo
+|        |                      |——Config
+|        |                      |     |——SwaggerConfig.java         (Swagger配置)
+|        |                      |——Controller
+|        |                      |     |——DataController.java        (指控报告接口)
+|        |                      |     |——DoctorController.java      (医生信息接口)
+|        |                      |     |——ReportController.java      (报告信息接口)
+|        |                      |——Entity
+|        |                      |     |——Artery                     (动脉评价类)
+                                |     |——Vein                       (静脉评价类)
+                                |     |——ConclusionTemplate         (检查结论模板类)
+                                |     |——FindingTemplate            (检查所见模板类)
+                                |     |——Pancreas                   (胰腺评价)
+                                |     |——Parenchyma                 (胰腺实质评价)
+                                |     |——Peripancreatic             (胰周评价)
+                                |     |——OtherTemplate              (其他评价)
+                                |     |——SimpleTemplate             (模板)
+                                |     |——Report                     (报告实体类)
+                                |     |——Doctor                     (医生实体类)
+                                |     |——Result                     (返回结果类)
+                                |     |——ResultEnum                 (返回结果错误类)
+                                |     |——StandardEnum               (评分规范类)
+                                |——Repository
+                                |     |——DoctorRepository           (医生JPA接口)
+                                |     |——ReportRepository           (报告JPA接口)
+                                |——Service
+                                |     |——DoctorService              (医生服务接口)
+                                |     |——ReportService              (报告服务接口)
+                                |     |——ServiceImpl  
+                                |             |——DoctorServcieImpl  (医生服务接口实现类)
+                                |             |——ReportServiceImpl  (报告服务接口实现类)
+                                |——Util
+                                |     |——ResultUtil                 (返回数据工具类)
+          |——resources
+                 |——normalization_dict_0810.json                    (归一化词典json)
+                 |——application.properties                          (相关配置)
